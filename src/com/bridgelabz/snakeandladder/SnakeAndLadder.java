@@ -5,6 +5,7 @@ public class SnakeAndLadder {
 		System.out.println("Welcome to Snake And Ladder Simulator");
 		
 		int playerPos = 0;
+		int noOfTurns = 0;
 		//Roll a Die
 		while(playerPos<100) {
 			int dieRoll = (int) Math.floor(Math.random()*6)+1;
@@ -18,6 +19,9 @@ public class SnakeAndLadder {
 			playerPos = playerPos<0 ? 0 : playerPos;
 			break;
 			}
+			noOfTurns++;
+			System.out.println("Player is now at "+playerPos);
 		}
+		System.out.println("\nPlayer took "+noOfTurns+" turns to complete the game");
 	}
 }
