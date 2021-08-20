@@ -6,16 +6,17 @@ public class SnakeAndLadder {
 		
 		int playerPos = 0;
 		//Roll a Die
-		int dieRoll = (int) Math.floor(Math.random()*6)+1;
-		int action = (int)Math.floor(Math.random()*3);
-		System.out.println("Player Rolled "+dieRoll);
-		
-		switch(action) {
-		case 0: break; //Do Nothing
-		case 1: playerPos += dieRoll; //Ladder
-		break;
-		case 2: playerPos -= dieRoll;
-		break;
+		while(playerPos<100) {
+			int dieRoll = (int) Math.floor(Math.random()*6)+1;
+			int action = (int)Math.floor(Math.random()*3);
+			switch(action) {
+			case 0: break; //Do Nothing
+			case 1: playerPos += dieRoll; //Ladder
+			break;
+			case 2: playerPos -= dieRoll;
+			playerPos = playerPos<0 ? 0 : playerPos;
+			break;
+			}
 		}
 	}
 }
