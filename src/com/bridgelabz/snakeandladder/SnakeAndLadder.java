@@ -12,8 +12,9 @@ public class SnakeAndLadder {
 			switch(action) {
 			case 0: break; //Do Nothing
 			case 1: playerPos += dieRoll; //Ladder
+			playerPos = playerPos>100 ? playerPos-dieRoll : playerPos;
 			break;
-			case 2: playerPos -= dieRoll;
+			case 2: playerPos -= dieRoll; //Snake
 			playerPos = playerPos<0 ? 0 : playerPos;
 			break;
 			}
